@@ -21,8 +21,8 @@ namespace betaalDemo
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            PAYNLSDK.API.RequestBase.ApiToken = "0940e0c93212f883616e57496288b76fe6cd850d";
-            PAYNLSDK.API.RequestBase.ServiceId = "SL-1094-0450";
+            // PAYNLSDK.API.RequestBase.ApiToken = "Your APITOKEN";
+            // PAYNLSDK.API.RequestBase.ServiceId = "Your service ID";
             PAYNLSDK.API.PaymentMethod.GetAll.Response response = PaymentMethod.GetAll();
 
 
@@ -102,11 +102,10 @@ namespace betaalDemo
             {
                 Response.Redirect(responseBak.Transaction.PaymentURL);
             }
-            //instatieren return.apsx en doorvoeren response
             // todo:
-            // redirect if payment creation was successfull (of hoe je dat ook schrijft)
-            // Wanneer dit niet gelukt is:
-            // Show message dat het doen van een betaling momenteel niet gaat
+            // redirect if payment creation was successfull
+            //if redirect failed :
+            //your code.
 
 
             // Perform transaction to get response object. Alternately, you could work with a stored ID.

@@ -8,8 +8,8 @@ namespace betaalDemo
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PAYNLSDK.API.RequestBase.ApiToken = "0940e0c93212f883616e57496288b76fe6cd850d";
-            PAYNLSDK.API.RequestBase.ServiceId = "SL-1094-0450";
+           // PAYNLSDK.API.RequestBase.ApiToken = "Your APITOKEN";
+           // PAYNLSDK.API.RequestBase.ServiceId = "Your service ID";
             PAYNLSDK.API.PaymentMethod.GetAll.Response response = PaymentMethod.GetAll();
             string tranidreader = Request.QueryString["order_id"];
             PAYNLSDK.API.Transaction.Info.Response info = Transaction.Info(tranidreader);
