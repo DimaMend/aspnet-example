@@ -1,0 +1,1643 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PAYNLSDK</name>
+    </assembly>
+    <members>
+        <member name="P:PAYNLSDK.API.RequestBase.RequiresApiToken">
+            <summary>
+            Indicator stating whether or not a API Token is required for a specific request
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.RequiresServiceId">
+            <summary>
+            Indicator stating whether or not a Service ID is required for a specific request
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.ApiToken">
+            <summary>
+            PAYNL API TOKEN
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.ServiceId">
+            <summary>
+            PAYNL Service ID
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.API.RequestBase.ToString">
+            <summary>
+            Return as JSON
+            </summary>
+            <returns>JSON string</returns>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.Url">
+            <summary>
+            URL used to perform this specific request
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.Version">
+            <summary>
+            Api Version for this request
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.Controller">
+            <summary>
+            Controller used for this request
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.Method">
+            <summary>
+            COntroller method for this request
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.Querystring">
+            <summary>
+            Extra querystring parameters used for this request
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.API.RequestBase.GetParameters">
+            <summary>
+            Returns a NameValueCollection of all paramaters used for this call.
+            </summary>
+            <returns>Name Value collection of parameters</returns>
+        </member>
+        <member name="M:PAYNLSDK.API.RequestBase.ToQueryString">
+            <summary>
+            Transform NameValueCollection to a querystring
+            </summary>
+            <returns>appendable querystring</returns>
+        </member>
+        <member name="F:PAYNLSDK.API.RequestBase.response">
+            <summary>
+            Response belonging to this request
+            </summary>
+        </member>
+        <member name="F:PAYNLSDK.API.RequestBase.rawResponse">
+            <summary>
+            The raw response stroing
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.RequestBase.RawResponse">
+            <summary>
+            Raw response data
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.API.RequestBase.SetResponse">
+            <summary>
+            Load the raw response and perform any actions along with it.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.API.ResponseBase.Request">
+            <summary>
+            The Error if the request led to a failed response
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.API.ResponseBase.ToString">
+            <summary>
+            Return response as formatted JSON
+            </summary>
+            <returns>JSON string</returns>
+        </member>
+        <member name="T:PAYNLSDK.Exceptions.ErrorException">
+            <summary>
+            ErrorException implementation
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Exceptions.ErrorException.Error">
+            <summary>
+            Error, if any
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Exceptions.ErrorException.HasError">
+            <summary>
+            Retiurn whether or not there's an Error object associated with this Exception
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.Exceptions.ErrorException.#ctor(PAYNLSDK.Objects.Error,System.Exception)">
+            <summary>
+            Create a new ErrorException with an Error attached
+            </summary>
+            <param name="error">Error object</param>
+            <param name="innerException">Inner Exception</param>
+        </member>
+        <member name="M:PAYNLSDK.Exceptions.ErrorException.#ctor(PAYNLSDK.Objects.Error)">
+            <summary>
+            Create a new ErrorException with an Error attached
+            </summary>
+            <param name="error">Error object</param>
+        </member>
+        <member name="M:PAYNLSDK.Exceptions.ErrorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates an ErrorException from a string
+            </summary>
+            <param name="message">error message</param>
+            <param name="innerException">inner Exception</param>
+        </member>
+        <member name="M:PAYNLSDK.Exceptions.ErrorException.#ctor(System.String)">
+            <summary>
+            Creates an ErrorException from a string
+            </summary>
+            <param name="message">error message</param>
+        </member>
+        <member name="T:PAYNLSDK.Objects.Address">
+            <summary>
+            General Address Details
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Address.Initials">
+            <summary>
+            Initials for Address
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Address.LastName">
+            <summary>
+            Lastname of receiver
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Address.Gender">
+            <summary>
+            Gender of receiver
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Address.StreetName">
+            <summary>
+            Street name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Address.StreetNumber">
+            <summary>
+            Street number
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Address.ZipCode">
+            <summary>
+            Zipcode
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Address.City">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Address.CountryCode">
+            <summary>
+            ISO2 Country code
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.Connection">
+            <summary>
+            Connection information
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.Trust">
+            <summary>
+            Trust indicator, from -10 to 10
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.Country">
+            <summary>
+            Country code fo the customer
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.City">
+            <summary>
+            name of the city of the customer 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.LocationLat">
+            <summary>
+            Customer location, latitude
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.LocationLon">
+            <summary>
+            Customer location, longitude
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.BrowserData">
+            <summary>
+            Details of the cusomers browser. Specified on transaction start 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.IP">
+            <summary>
+            IP address of the customer (during payment) 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.Blacklist">
+            <summary>
+            Indicator whether or not the cusomer is blacklisted
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.Host">
+            <summary>
+            Hostaddress of the customer
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.OrderIP">
+            <summary>
+            Ip used in the order
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.OrderReturnUrl">
+            <summary>
+            Used return URl in request
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.MerchantCode">
+            <summary>
+            The corresponding merchant-code of the merchant
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Connection.MerchantName">
+            <summary>
+            The corresponding name of the merchant
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.CountryOption">
+            <summary>
+            General Payment options details for an individual country.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.CountryOption.ID">
+            <summary>
+            Country option ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.CountryOption.Name">
+            <summary>
+            Country name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.CountryOption.VisibleName">
+            <summary>
+            Country visible name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.CountryOption.Image">
+            <summary>
+            Filename of the country icon 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.CountryOption.IconPath">
+            <summary>
+            Path for the country icon. The full icon URL is a concatenation of $basePath, $path and $img. 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.CountryOption.InEU">
+            <summary>
+            Indicator whether or not the country is located in the EU.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.CountryOption.PaymentOptions">
+            <summary>
+            List of available payment options for this country
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.CountryOptions">
+            <summary>
+            Country Options
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.EndUser">
+            <summary>
+            Provides details of the EndUser.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.Language">
+            <summary>
+            End User's Language
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.Initials">
+            <summary>
+            End User's Initials
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.Gender">
+            <summary>
+            End User's Gender
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.Lastname">
+            <summary>
+            End User's Last Name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.BirthDate">
+            <summary>
+            End User's Date of Birth
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.PhoneNumber">
+            <summary>
+            End User's Phone Number
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.EmailAddress">
+            <summary>
+            End User's Email Address
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.BankAccount">
+            <summary>
+            End User's Bank Account Number.
+            Note in most cases the IBAN will be used.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.IBAN">
+            <summary>
+            End User's IBAN
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.BIC">
+            <summary>
+            End User's BIC
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.Address">
+            <summary>
+            End User's Address
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.InvoiceAddress">
+            <summary>
+            End User's Invoice Address
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.PaymentDetails">
+            <summary>
+            End User's Payment Details
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.StornoDetails">
+            <summary>
+            End User's Storno Details if applicable
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.EndUser.StatsDetails">
+            <summary>
+            End User's Stats Details if applicable
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.Error">
+            <summary>
+            Error definition
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Error.Result">
+            <summary>
+            Result of a call. In case of a real error, this SHOULD always be false.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Error.Code">
+            <summary>
+            Error code
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Error.Message">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.Merchant">
+            <summary>
+            Merchant information
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Merchant.ID">
+            <summary>
+            Merchant ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Merchant.Name">
+            <summary>
+            Merchant Name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Merchant.PublicName">
+            <summary>
+            Merchant Public Name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Merchant.State">
+            <summary>
+            Active State of the merchant
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.OrderData">
+            <summary>
+            Ordered product information
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.OrderData.ProductId">
+            <summary>
+            Your systems product ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.OrderData.Description">
+            <summary>
+            Description of the product (max 45 characters)
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.OrderData.Price">
+            <summary>
+            Amount in cents of the product (amount incl. vat)
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.OrderData.Quantity">
+            <summary>
+            Quantity of products with this product id
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.OrderData.VatCode">
+            <summary>
+            The vat code
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.Objects.OrderData.#ctor(System.String,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Create a new OrderData specification
+            </summary>
+            <param name="productId">Your systems product ID</param>
+            <param name="description">Description of the product (max 45 characters)</param>
+            <param name="price">Amount in cents of the product (amount incl. vat)</param>
+            <param name="vatCode">The vat code</param>
+            <param name="quantity">Quantity of products with this product id</param>
+        </member>
+        <member name="M:PAYNLSDK.Objects.OrderData.#ctor(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Create a new OrderData specification
+            </summary>
+            <param name="productId">Your systems product ID</param>
+            <param name="description">Description of the product (max 45 characters)</param>
+            <param name="price">Amount in cents of the product (amount incl. vat)</param>
+            <param name="vatCode">The vat code</param>
+        </member>
+        <member name="M:PAYNLSDK.Objects.OrderData.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            Create a new OrderData specification
+            </summary>
+            <param name="productId">Your systems product ID</param>
+            <param name="price">Amount in cents of the product (amount incl. vat)</param>
+            <param name="vatCode">The vat code</param>
+        </member>
+        <member name="M:PAYNLSDK.Objects.OrderData.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Create a new OrderData specification
+            </summary>
+            <param name="productId">Your systems product ID</param>
+            <param name="description">Description of the product (max 45 characters)</param>
+            <param name="price">Amount in cents of the product (amount incl. vat)</param>
+        </member>
+        <member name="M:PAYNLSDK.Objects.OrderData.#ctor(System.String,System.Int32)">
+            <summary>
+            Create a new OrderData specification
+            </summary>
+            <param name="productId">Your systems product ID</param>
+            <param name="price">Amount in cents of the product (amount incl. vat)</param>
+        </member>
+        <member name="M:PAYNLSDK.Objects.OrderData.#ctor(System.String,System.String,System.Int32,PAYNLSDK.Enums.TaxClass,System.Int32)">
+            <summary>
+            Create a new OrderData specification
+            </summary>
+            <param name="productId">Your systems product ID</param>
+            <param name="description">Description of the product (max 45 characters)</param>
+            <param name="price">Amount in cents of the product (amount incl. vat)</param>
+            <param name="vatCode">The vat code</param>
+            <param name="quantity">Quantity of products with this product id</param>
+        </member>
+        <member name="M:PAYNLSDK.Objects.OrderData.#ctor(System.String,System.String,System.Int32,PAYNLSDK.Enums.TaxClass)">
+            <summary>
+            Create a new OrderData specification
+            </summary>
+            <param name="productId">Your systems product ID</param>
+            <param name="description">Description of the product (max 45 characters)</param>
+            <param name="price">Amount in cents of the product (amount incl. vat)</param>
+            <param name="vatCode">The vat code</param>
+        </member>
+        <member name="M:PAYNLSDK.Objects.OrderData.#ctor(System.String,System.Int32,PAYNLSDK.Enums.TaxClass)">
+            <summary>
+            Create a new OrderData specification
+            </summary>
+            <param name="productId">Your systems product ID</param>
+            <param name="price">Amount in cents of the product (amount incl. vat)</param>
+            <param name="vatCode">The vat code</param>
+        </member>
+        <member name="T:PAYNLSDK.Objects.PaymentDetails">
+            <summary>
+            Generl dtails regarding the payment
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.Amount">
+            <summary>
+            Amount of the session (in cents, eg. 1235)
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.CurrencyAmount">
+            <summary>
+            Currency Amount of the session (in cents, eg. 1235) 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaidAmount">
+            <summary>
+            The total amount paid for this transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaidCurrencyAmount">
+            <summary>
+            The total currency amount paid for this transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaidBase">
+            <summary>
+            Basic amount without the cost
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaidCosts">
+            <summary>
+            Payment costs paid by the customer (ex. VAT) 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaidCostsVat">
+            <summary>
+            VAT rate for costs 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaidCurreny">
+            <summary>
+            Currency of the payment 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaidAttemps">
+            <summary>
+            Number of payment attempts 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaidDuration">
+            <summary>
+            Duration of the phonecall (only for phone payments)
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.Description">
+            <summary>
+            Order description 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.ProcessTime">
+            <summary>
+            Time passed from payment start to payment finish
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.State">
+            <summary>
+            Payment Status indicator
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.StateName">
+            <summary>
+            Payment status name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.StateDescription">
+            <summary>
+            Payment status description
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.Exchange">
+            <summary>
+            Indicator whether or not the exchange URL has been called succesfully
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.Storno">
+            <summary>
+            Indicator whether or not the transaction is refunded
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaymentOptionId">
+            <summary>
+            The payment options used (eq. iDeal/creditcard) 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaymentOptionSubId">
+            <summary>
+            The payment options sub id used (eq. the selected bank for iDeal) 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.Secure">
+            <summary>
+            For creditcard transactions
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.SecureStatus">
+            <summary>
+            Returns the 3d secure status
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.IdentifierName">
+            <summary>
+            Name of the consumer
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.IdentifierPublic">
+            <summary>
+            Payment identifier that can be displayed to the customer for reference
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.IdentifierHash">
+            <summary>
+            Customer ID, a unique hash based upon the bankaccount/creditcard number of the customer
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.ServiceId">
+            <summary>
+            ID of the service/website for which the transaction is started
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.ServiceName">
+            <summary>
+            Name of the service/website
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.ServiceDescription">
+            <summary>
+            Description of the service/website
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.Created">
+            <summary>
+            Date time of the moment the transaction was started
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.Modified">
+            <summary>
+            Date time of the last status change of the transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaymentMethodId">
+            <summary>
+            ID of the type of the payment method
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaymentMethodName">
+            <summary>
+            Name of the type of the payment method
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaymentMethodDescription">
+            <summary>
+            Description of the type of the payment method
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentDetails.PaymentProfileName">
+            <summary>
+            Name of the payment profile used to pay the transaction
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.PaymentMethod">
+            <summary>
+            Payment Method information
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentMethod.Id">
+            <summary>
+            Payment method ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentMethod.Name">
+            <summary>
+            Payment method name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentMethod.Abbreviation">
+            <summary>
+            Abbreviation for this payment method
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.PaymentOptionBase">
+            <summary>
+            Payment Option information base
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentOptionBase.ID">
+            <summary>
+            ID for this payment (sub)option
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentOptionBase.Name">
+            <summary>
+            Name for this payment (sub)option
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentOptionBase.VisibleName">
+            <summary>
+            Visible name for this payment (sub)option
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentOptionBase.Image">
+            <summary>
+            Image for this payment (sub)option
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentOptionBase.IconPath">
+            <summary>
+            Path for the (sub)option icon. The full icon URL is a concatenation of $basePath, $path and $img. 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentOptionBase.State">
+            <summary>
+            Indicator whether or not the sub option is available
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.PaymentSubOption">
+            <summary>
+            Payment Suboption information
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.PaymentSubOptions">
+            <summary>
+            Payment Suboptions Dictionary
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.PaymentOption">
+            <summary>
+            Payment Option information
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentOption.PaymentMethodId">
+            <summary>
+            ID of the Payment Method this option belongs to
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentOption.PaymentSubOptions">
+            <summary>
+            Dictionary of payment sub options
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.PaymentOptions">
+            <summary>
+            Payment Options Dictionary
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.PaymentProfile">
+            <summary>
+            Payment Profile information
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentProfile.Id">
+            <summary>
+            Payment Profile ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentProfile.Name">
+            <summary>
+            Payment Profile Name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentProfile.ParentId">
+            <summary>
+            Payment Profile Parent ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentProfile.Public">
+            <summary>
+            Indicator if this Payment Profile is publicly available
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentProfile.PaymentMethodId">
+            <summary>
+            Payment Method ID this profile belongs to
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentProfile.CountryId">
+            <summary>
+            Country ID this payment profile belongs to.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentProfile.PaymentTariffId">
+            <summary>
+            ID of the Payment Tariff
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.PaymentProfile.NoahId">
+            <summary>
+            The nature of address, mostly used for PayPerCall and PayPerMinute to indicate wether this the payment was done with a mobile phone (1) or not (0). 
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.SalesData">
+            <summary>
+            Specification of sales data for a transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.SalesData.InvoiceDate">
+            <summary>
+            Invoice date
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.SalesData.DeliveryDate">
+            <summary>
+            Delivery date
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.SalesData.OrderData">
+            <summary>
+            Ordered products specification
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.Service">
+            <summary>
+             Service Details
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.ID">
+            <summary>
+            Service ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.Name">
+            <summary>
+            Service Name
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.Description">
+            <summary>
+            Service Description
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.Publication">
+            <summary>
+            The way the service is presented to the customer (eg. an URL or name of an advertisement) 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.BasePath">
+            <summary>
+            Base path of the images for the payment options 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.Module">
+            <summary>
+            ID of the module
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.SubModule">
+            <summary>
+            ID of the submodule
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.State">
+            <summary>
+            Active state for this Service
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.SuccessUrl">
+            <summary>
+            Target url after a successfull payment 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.Service.ErrorUrl">
+            <summary>
+            Target url after a failed payment
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.ServiceCategory">
+            <summary>
+            Service Category information
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.ServiceCategory.Id">
+            <summary>
+            ID of the Service Category
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.ServiceCategory.Name">
+            <summary>
+            Name of the Service Category
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.StatsDetails">
+            <summary>
+            General Statistics details.
+            These can be used to track your own statistics on transactions and will be returned when Transaction Info is requested.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StatsDetails.PaymentSessionId">
+            <summary>
+            ID for the Payment session these details belong to
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StatsDetails.Tool">
+            <summary>
+            The used tool code which can be tracked in the stats
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StatsDetails.Info">
+            <summary>
+            The used info code which can be tracked in the stats
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StatsDetails.PromotorId">
+            <summary>
+            The id of a promotor / affiliate.
+            In general, you won't use this unless you know the ID's of your affiliate's
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StatsDetails.Extra1">
+            <summary>
+            The first free value which can be tracked in the stats
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StatsDetails.Extra2">
+            <summary>
+            The second free value which can be tracked in the stats
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StatsDetails.Extra3">
+            <summary>
+            The third free value which can be tracked in the stats
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StatsDetails.Object">
+            <summary>
+            Free value to e.g. identify an object type.
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.StornoDetails">
+            <summary>
+            Storno Details
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.StornoId">
+            <summary>
+            ID of the refund
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.StornoAmount">
+            <summary>
+            Refund amount
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.BankAccount">
+            <summary>
+            Number of the bankaccount the refund is deposited to
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.IBAN">
+            <summary>
+            IBAN of the bankaccount the refund is deposited to
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.bic">
+            <summary>
+            BIC of the bankaccount the refund is deposited to 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.City">
+            <summary>
+            City of the bankaccount owner 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.Date">
+            <summary>
+            Date and time the payment is refunded 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.Reason">
+            <summary>
+            Reason of the refund
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.StornoDetails.EmailAddress">
+            <summary>
+            The email address the refund confirmation is sent to
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.TransactionData">
+            <summary>
+            Transaction data
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionData.Currency">
+            <summary>
+            The currency of the transaction. If omitted, EUR is used.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionData.CostsVat">
+            <summary>
+            Cost for VAT
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionData.OrderExchangeUrl">
+            <summary>
+            The URL of the exchange file that needs to be called
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionData.Description">
+            <summary>
+            Description belonging to the order
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionData.ExpireDate">
+            <summary>
+            Expire date of the transaction
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.TransactionStartInfo">
+            <summary>
+            Transaction Start Information object.
+            This object is part of the response returned after a call to start a transaction and contains the 
+            transaction ID and payment URL you should redirect the enduser to.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStartInfo.TransactionId">
+            <summary>
+            Transaction ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStartInfo.PaymentURL">
+            <summary>
+            The URL where the customer can be send to in order to finish the transaction. 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStartInfo.PopupAllowed">
+            <summary>
+            Indicates whether the payment screen may be loaded in popup window
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStartInfo.PaymentReference">
+            <summary>
+            Payment reference used to identify manual bank transfers
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.TransactionStats">
+            <summary>
+            Payment Transaction Information
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.Id">
+            <summary>
+            Transaction identifier. 
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.WebsiteName">
+            <summary>
+            Name of the website used for the transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.ServiceName">
+            <summary>
+            Name of the service used for the transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.ServiceCode">
+            <summary>
+            Code of the service used for the transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.OrderAmount">
+            <summary>
+            Amount in cents of euro
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.Created">
+            <summary>
+            Date and time of the transaction.
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.InternalStatus">
+            <summary>
+            Internal status of the transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.Consumer3dSecure">
+            <summary>
+            If Y mean that the payment was verified
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.ConsumerAccountNumber">
+            <summary>
+            Consumer account number
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.ProfileId">
+            <summary>
+            ID of the Payment Profile used for this transaction
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStats.ProfileName">
+            <summary>
+            Name of the Payment Profile used for this transaction
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.TransactionStatsList">
+            <summary>
+            List of Transaction Statusses
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStatsList.Transactions">
+            <summary>
+            Array containing the transactions stats
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Objects.TransactionStartEnduser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Objects.TransactionStartEnduser.Blacklist">
+            <summary>
+            Indidicator whether or not the cusomer is blacklisted
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.PaymentProfile">
+            <summary>
+            Generic Payment Profile service helper class.
+            Makes calling PAYNL Services easier and illiminates the need to fully initiate all Request objects.
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.PaymentProfile.Get(System.Int32)">
+            <summary>
+            Get details for a specific payment profile
+            </summary>
+            <param name="paymentProfileId">Payment profile ID</param>
+            <returns>Payment profile response</returns>
+        </member>
+        <member name="M:PAYNLSDK.PaymentProfile.GetAll">
+            <summary>
+            Get details for all payment profiles
+            </summary>
+            <returns>List of payment profile info</returns>
+        </member>
+        <member name="M:PAYNLSDK.PaymentProfile.GetAvailable(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean})">
+            <summary>
+            Get payment profile information for all your available profiles for the specified service category
+            </summary>
+            <param name="categoryId">The ID of the category of the service the payment options are used for</param>
+            <param name="programId">ID of the program for which the payment options are used. (Only available if the program option is enabled!)</param>
+            <param name="paymentMethodId">Payment Method ID</param>
+            <param name="showNotAllowedOnRegistration">Indicator wether to show profiles that are initially not allowed on registration. </param>
+            <returns>Response containing the list of payment profile information</returns>
+        </member>
+        <member name="M:PAYNLSDK.PaymentProfile.GetAvailable(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get payment profile information for all your available profiles for the specified service category
+            </summary>
+            <param name="categoryId">The ID of the category of the service the payment options are used for</param>
+            <param name="programId">ID of the program for which the payment options are used. (Only available if the program option is enabled!)</param>
+            <param name="paymentMethodId">Payment Method ID</param>
+            <returns>Response containing the list of payment profile information</returns>
+        </member>
+        <member name="M:PAYNLSDK.PaymentProfile.GetAvailable(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Get payment profile information for all your available profiles for the specified service category
+            </summary>
+            <param name="categoryId">The ID of the category of the service the payment options are used for</param>
+            <param name="programId">ID of the program for which the payment options are used. (Only available if the program option is enabled!)</param>
+            <returns>Response containing the list of payment profile information</returns>
+        </member>
+        <member name="M:PAYNLSDK.PaymentProfile.GetAvailable(System.Int32)">
+            <summary>
+            Get payment profile information for all your available profiles for the specified service category
+            </summary>
+            <param name="categoryId">The ID of the category of the service the payment options are used for</param>
+            <returns>Response containing the list of payment profile information</returns>
+        </member>
+        <member name="T:PAYNLSDK.PaymentMethod">
+            <summary>
+            Generic Payment Method service helper class.
+            Makes calling PAYNL Services easier and illiminates the need to fully initiate all Request objects.
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.PaymentMethod.Get(System.Int32)">
+            <summary>
+            Get information for the requested payment method.
+            </summary>
+            <param name="paymentMethodId">Payment Method ID</param>
+            <returns>Response containing the payment method data</returns>
+        </member>
+        <member name="M:PAYNLSDK.PaymentMethod.GetAll">
+            <summary>
+            Get information for all payment methods.
+            </summary>
+            <returns>Response containing a list of information for all payment methods</returns>
+        </member>
+        <member name="T:PAYNLSDK.Service">
+            <summary>
+            Generic Service service helper class.
+            Makes calling PAYNL Services easier and illiminates the need to fully initiate all Request objects.
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.Service.GetCategories(System.Nullable{System.Int32})">
+            <summary>
+            Get Service Categories for a given payment option ID
+            </summary>
+            <param name="paymentOptionId">Payment Option ID</param>
+            <returns>Response object containing service categories</returns>
+        </member>
+        <member name="M:PAYNLSDK.Service.GetCategories">
+            <summary>
+            Get Service Categories
+            </summary>
+            <returns>Response object containing service categories</returns>
+        </member>
+        <member name="T:PAYNLSDK.Transaction">
+            <summary>
+            Generic Transaction service helper class.
+            Makes calling PAYNL Services easier and illiminates the need to fully initiate all Request objects.
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.IsPaid(System.String)">
+            <summary>
+            Checks whether a transaction has a status of PAID
+            </summary>
+            <param name="transactionId">Transaction Id</param>
+            <returns>True if PAID, false otherwise</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.IsPaid(PAYNLSDK.Enums.PaymentStatus)">
+            <summary>
+            Checks whether a status is a PAID status
+            </summary>
+            <param name="status">Transaction status</param>
+            <returns>True if PAID, false otherwise</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.IsCancelled(System.String)">
+            <summary>
+            Checks whether a transaction has a status of CANCELLED
+            </summary>
+            <param name="transactionId">Transaction Id</param>
+            <returns>True if CANCELLED, false otherwise</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.IsCancelled(PAYNLSDK.Enums.PaymentStatus)">
+            <summary>
+            Checks whether a status is a CANCELLED status
+            </summary>
+            <param name="status">Transaction status</param>
+            <returns>True if CANCELLED, false otherwise</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.IsPending(System.String)">
+            <summary>
+            Checks whether a transaction has a status of PENDING
+            </summary>
+            <param name="transactionId">Transaction Id</param>
+            <returns>True if PENDING, false otherwise</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.IsPending(PAYNLSDK.Enums.PaymentStatus)">
+            <summary>
+            Checks whether a status is a PENDING status
+            </summary>
+            <param name="status">Transaction status</param>
+            <returns>True if PENDING, false otherwise</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.IsVerify(System.String)">
+            <summary>
+            Checks whether a transaction has a status of VERIFY
+            </summary>
+            <param name="transactionId">Transaction Id</param>
+            <returns>True if VERIFY, false otherwise</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.IsVerify(PAYNLSDK.Enums.PaymentStatus)">
+            <summary>
+            Checks whether a status is a VERIFY status
+            </summary>
+            <param name="status">Transaction status</param>
+            <returns>True if VERIFY, false otherwise</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.Info(System.String)">
+            <summary>
+            Query the service for all (current status) information on a transaction
+            </summary>
+            <param name="transactionId">Transaction ID</param>
+            <returns>Full response object with all information available</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.GetService(System.Nullable{PAYNLSDK.Enums.PaymentMethodId})">
+            <summary>
+            Return service information.
+            This API returns merchant info and all the available payment options per country for a given service.
+            This is an important API if you want to build your own payment screens.
+            </summary>
+            <param name="paymentMethodId">Paymentmethod ID</param>
+            <returns>FUll response with all service information</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.GetService">
+            <summary>
+            Return service information.
+            This API returns merchant info and all the available payment options per country for a given service.
+            This is an important API if you want to build your own payment screens.
+            </summary>
+            <returns>FUll response with all service information</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.Refund(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime})">
+            <summary>
+            Performs a (partial) refund call on an existing transaction
+            </summary>
+            <param name="transactionId">Transaction ID</param>
+            <param name="description">Reason for the refund. May be null.</param>
+            <param name="amount">Amount of the refund. If null is given, it will be the full amount of the transaction.</param>
+            <param name="processDate">Date to process the refund. May be null.</param>
+            <returns>Full response including the Refund ID</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.Refund(System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Performs a (partial) refund call on an existing transaction
+            </summary>
+            <param name="transactionId">Transaction ID</param>
+            <param name="description">Reason for the refund. May be null.</param>
+            <param name="amount">Amount of the refund. If null is given, it will be the full amount of the transaction.</param>
+            <returns>Full response including the Refund ID</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.Refund(System.String,System.String)">
+            <summary>
+            Performs a (partial) refund call on an existing transaction
+            </summary>
+            <param name="transactionId">Transaction ID</param>
+            <param name="description">Reason for the refund. May be null.</param>
+            <returns>Full response including the Refund ID</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.Refund(System.String)">
+            <summary>
+            Performs a (partial) refund call on an existing transaction.
+            </summary>
+            <param name="transactionId">Transaction ID</param>
+            <returns>Full response including the Refund ID</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.CreateTransactionRequest(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean})">
+            <summary>
+            Creates a transaction start request.
+            </summary>
+            <param name="ipAddress">The IP address of the customer</param>
+            <param name="returnUrl">The URL where the customer has to be send to after the payment.</param>
+            <param name="paymentOptionId">	The ID of the payment option (for iDEAL use 10).</param>
+            <param name="paymentSubOptionId">	In case of an iDEAL payment this is the ID of the bank (see the paymentOptionSubList in the getService function).</param>
+            <param name="testMode">	Whether or not we perform this call in test mode.</param>
+            <returns>Transaction Start Request</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.CreateTransactionRequest(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Creates a transaction start request.
+            
+            Test Mode will be defaulted to FALSE.
+            </summary>
+            <param name="ipAddress">The IP address of the customer</param>
+            <param name="returnUrl">The URL where the customer has to be send to after the payment.</param>
+            <param name="paymentOptionId">	The ID of the payment option (for iDEAL use 10).</param>
+            <param name="paymentSubOptionId">	In case of an iDEAL payment this is the ID of the bank (see the paymentOptionSubList in the getService function).</param>
+            <returns>Transaction Start Request</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.CreateTransactionRequest(System.String,System.String,System.Int32)">
+            <summary>
+            Creates a transaction start request.
+            
+            Test Mode will be defaulted to FALSE.
+            </summary>
+            <param name="ipAddress">The IP address of the customer</param>
+            <param name="returnUrl">The URL where the customer has to be send to after the payment.</param>
+            <param name="paymentOptionId">	The ID of the payment option (for iDEAL use 10).</param>
+            <returns>Transaction Start Request</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.CreateTransactionRequest(System.String,System.String)">
+            <summary>
+            Creates a transaction start request.
+            
+            Test Mode will be defaulted to FALSE.
+            </summary>
+            <param name="ipAddress">The IP address of the customer</param>
+            <param name="returnUrl">The URL where the customer has to be send to after the payment.</param>
+            <returns>Transaction Start Request</returns>
+        </member>
+        <member name="M:PAYNLSDK.Transaction.Start(PAYNLSDK.API.Transaction.Start.Request)">
+            <summary>
+            Performs a request to start a transaction.
+            </summary>
+            <returns>Full response object including Transaction ID</returns>
+        </member>
+        <member name="T:PAYNLSDK.Enums.EnumUtil">
+            <summary>
+            Utility to convert Enum Values to EnumMember Values and vice versa.
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.Enums.EnumUtil.ToEnumString``1(``0)">
+            <summary>
+            Return the value of an EnumMember
+            </summary>
+            <typeparam name="T">Type of Enum</typeparam>
+            <param name="type">Enum value</param>
+            <returns>Value of the EnumMember attribute</returns>
+        </member>
+        <member name="M:PAYNLSDK.Enums.EnumUtil.ToEnumString(System.Object,System.Type)">
+            <summary>
+            
+            Return the value of an EnumMember
+            </summary>
+            <param name="value">Enum value</param>
+            <param name="enumType">Enum type</param>
+            <returns>Value of the EnumMember attribute</returns>
+        </member>
+        <member name="M:PAYNLSDK.Enums.EnumUtil.ToEnum``1(System.String)">
+            <summary>
+            Transform the value for an EnumMember attribute to the Enum Value
+            </summary>
+            <typeparam name="T">Enum Type</typeparam>
+            <param name="str">EnumMember Value</param>
+            <returns>Enum Value</returns>
+        </member>
+        <member name="M:PAYNLSDK.Enums.EnumUtil.ToEnum(System.String,System.Type)">
+            <summary>
+            Transform the value for an EnumMember attribute to the Enum Value
+            </summary>
+            <param name="str">EnumMember Value</param>
+            <param name="enumType">Enum Type</param>
+            <returns>Enum Value</returns>
+        </member>
+        <member name="T:PAYNLSDK.Enums.Gender">
+            <summary>
+            Gender enumeration
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Enums.TaxClass">
+            <summary>
+            TaxClass enumeration
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Enums.PaymentMethodId">
+            <summary>
+            PaymentMethodId enumeration
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Enums.ExchangeState">
+            <summary>
+            ExchangeState enumeration
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Enums.ActiveState">
+            <summary>
+            ActiveState enumeration
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Enums.Secure">
+            <summary>
+            3D Secure enumeration
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Enums.Availability">
+            <summary>
+            Availability enumeration
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Enums.Blacklist">
+            <summary>
+            Blacklist type enumeration
+            </summary>
+        </member>
+        <member name="T:PAYNLSDK.Enums.PaymentStatus">
+            <summary>
+            Paymentstatus enumeration representing PAYNL Payment statusses
+            </summary>
+        </member>
+        <member name="F:PAYNLSDK.Net.Client.Endpoint">
+            <summary>
+            PAYNL Endpoint
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.Client.ApiToken">
+            <summary>
+            PAYNL API TOKEN
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.Client.ServiceID">
+            <summary>
+            PAYNL SERVICE ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.Client.ProxyConfigurationInjector">
+            <summary>
+            Proxy injector
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.Client.ApiVersion">
+            <summary>
+            API VERSION
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.Client.ClientVersion">
+            <summary>
+            Client version
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.Client.UserAgent">
+            <summary>
+            User agent
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.#ctor(System.String,System.String,PAYNLSDK.Net.ProxyConfigurationInjector.IProxyConfigurationInjector)">
+            <summary>
+            Create a new Service client
+            </summary>
+            <param name="apiToken">PAYNL Api Token</param>
+            <param name="serviceID">PAYNL Service ID</param>
+            <param name="proxyConfigurationInjector">Proxy Injector</param>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.#ctor(System.String,System.String)">
+            <summary>
+            Create a new Service client
+            </summary>
+            <param name="apiToken">PAYNL Api Token</param>
+            <param name="serviceID">PAYNL Service ID</param>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.#ctor(System.String)">
+            <summary>
+            Create a new Service client
+            </summary>
+            <param name="apiToken">PAYNL Api Token</param>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.#ctor">
+            <summary>
+            create new Client
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.PerformRequest(PAYNLSDK.API.RequestBase)">
+            <summary>
+            Performs an actual request
+            </summary>
+            <param name="request">Specific request implementation to perform</param>
+            <returns>raw response string</returns>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.PrepareRequest(System.String,System.String)">
+            <summary>
+            Prepares a request
+            </summary>
+            <param name="requestUriString">URL to call</param>
+            <param name="method">Request Method (get, post, delete, put)</param>
+            <returns></returns>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.PerformRoundTrip2(System.Net.HttpWebRequest,PAYNLSDK.Net.HttpStatusCode,System.Action)">
+            <summary>
+            Performs the actual HTTP Request
+            </summary>
+            <param name="request">the http request</param>
+            <param name="expectedHttpStatusCode">expected http status code</param>
+            <param name="requestAction">Any action that can be executed before actually performing the http request</param>
+            <returns>raw response</returns>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.GetEncoding(System.Net.HttpWebResponse)">
+            <summary>
+            Get the Encoding
+            </summary>
+            <param name="response">http response</param>
+            <returns>Encoding</returns>
+        </member>
+        <member name="M:PAYNLSDK.Net.Client.ErrorExceptionFromWebException(System.Net.WebException)">
+            <summary>
+            Build an error exception from a Web Exception
+            </summary>
+            <param name="e">web exception</param>
+            <returns>ErrorException</returns>
+        </member>
+        <member name="P:PAYNLSDK.Net.IClient.ApiToken">
+            <summary>
+            PAYNL API TOKEN
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.IClient.ServiceID">
+            <summary>
+            PAYNL SERVICE ID
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.IClient.ProxyConfigurationInjector">
+            <summary>
+            Proxy injector
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.IClient.ApiVersion">
+            <summary>
+            API VERSION
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.IClient.ClientVersion">
+            <summary>
+            Client version
+            </summary>
+        </member>
+        <member name="P:PAYNLSDK.Net.IClient.UserAgent">
+            <summary>
+            User agent
+            </summary>
+        </member>
+        <member name="M:PAYNLSDK.Net.IClient.PerformRequest(PAYNLSDK.API.RequestBase)">
+            <summary>
+            Performs an actual request
+            </summary>
+            <param name="request">Specific request implementation to perform</param>
+            <returns>raw response string</returns>
+        </member>
+        <member name="T:PAYNLSDK.Net.ProxyConfigurationInjector.InjectWebProxy">
+            <summary>
+            Completely overwrites the web proxy so you can hard configure it. Example:
+            <code>
+            ICredentials credentials = new NetworkCredential("xxxx", "xxxx");
+            IWebProxy webProxy = new WebProxy (new Uri("http://xx.xx.xx.xxx:xxxx"));
+            webProxy.Credentials = credentials;
+            new InjectWebProxy(webProxy);
+            </code>
+            </summary>
+        </member>
+    </members>
+</doc>
