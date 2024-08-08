@@ -1,0 +1,40 @@
+--- original
++++ remediated
+@@ -0,0 +0,0 @@
+ ﻿using PAYNLSDK;
+@@ -2,0 +2,1 @@
++using System.Text.RegularExpressions;
+ using System;
+ 
+ namespace betaalDemo
+ {
+     public partial class _return : System.Web.UI.Page
+     {
+ 
+         protected void Page_Load(object sender, EventArgs e)
+         {
+            // PAYNLSDK.API.RequestBase.ApiToken = "Your APITOKEN";
+            // PAYNLSDK.API.RequestBase.ServiceId = "Your service ID";
+             PAYNLSDK.API.PaymentMethod.GetAll.Response response = PaymentMethod.GetAll();
+@@ -14,1 +15,1 @@
+-            string tranidreader = Request.QueryString["order_id"];
++            string tranidreader = Regex.Replace(Request.QueryString["order_id"], "[^a-zA-Z0-9]", string.Empty);
+             PAYNLSDK.API.Transaction.Info.Response info = Transaction.Info(tranidreader);
+             PAYNLSDK.Enums.PaymentStatus result = info.PaymentDetails.State;
+ 
+             if (Transaction.IsCancelled(result))
+             {
+                 // This will only happen when the transaction is cancelled
+                 // TODO: process this in YOUR OWN backend
+                 Response.Write("False|Something went wrong");
+ 
+             }
+             else
+             {
+                 // This will only happen when the transaction is pending, verified or paid
+                 // TODO: process this in YOUR OWN backend
+                 Response.Write("True|Thank you for using our services");
+             }
+         }
+     }
+ }
