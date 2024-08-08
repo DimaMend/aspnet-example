@@ -136,16 +136,16 @@
              System.Diagnostics.Process.Start("cmd.exe", $"/c TxtTussen.Text");
  
              // stored xss - embed untrusted data in generated output.
-             TxtTussen.Text = $"<script>window.location='{code}';</script>";
+@@ -136,1 +136,1 @@
+-            TxtTussen.Text = $"<script>window.location='{code}';</script>";
++              TxtTussen.Text = HttpUtility.HtmlEncode($"<script>window.location='{code}';</script>");
              
              // Reflected XSS - embeds untrusted data in generated output with Response.
              string contentType = Request["contentType"];
              Response.ContentType = contentType;
              
              // Reflected XSS - embeds untrusted data in generated output with Text.
-@@ -143,1 +143,1 @@
--            TxtTussen.Text = string.Format("Thank you, {0}", Request.Params["PortfolioName"]);
-+            TxtTussen.Text = string.Format("Thank you, {0}", HttpUtility.HtmlEncode(Request.Params["PortfolioName"]));
+             TxtTussen.Text = string.Format("Thank you, {0}", Request.Params["PortfolioName"]);
          }
  
      }
