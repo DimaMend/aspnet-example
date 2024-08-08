@@ -115,11 +115,15 @@
  
              
              //Vulnarable code
-             var code = TxtTussen.Text;//sql inj trigger new update dfgdf desfsd
+@@ -115,1 +115,1 @@
+-            var code = TxtTussen.Text;//sql inj trigger new update dfgdf desfsd
++              var code = HttpUtility.HtmlEncode(TxtTussen.Text);
              //SprocsManual.Execute(Sprocs.Connection.ConnectionString, $"Select * from Entity where code = '{code}'", CommandType.Text);
              
-             code = $"<script>alert('{code}');</script>"; //xss
-             Response.Write($"<div>{code}</div>");
+@@ -118,2 +118,1 @@
+-            code = $"<script>alert('{code}');</script>"; //xss
+-            Response.Write($"<div>{code}</div>");
++              Response.Write($"<div>{code}</div>");
  
              var ms = new MemoryStream();
              BinaryFormatter bf = new BinaryFormatter();
@@ -136,9 +140,7 @@
              System.Diagnostics.Process.Start("cmd.exe", $"/c TxtTussen.Text");
  
              // stored xss - embed untrusted data in generated output.
-@@ -136,1 +136,1 @@
--            TxtTussen.Text = $"<script>window.location='{code}';</script>";
-+              TxtTussen.Text = HttpUtility.HtmlEncode($"<script>window.location='{code}';</script>");
+             TxtTussen.Text = $"<script>window.location='{code}';</script>";
              
              // Reflected XSS - embeds untrusted data in generated output with Response.
              string contentType = Request["contentType"];
