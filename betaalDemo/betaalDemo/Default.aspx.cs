@@ -11,8 +11,6 @@ namespace betaalDemo
 {
     public partial class Default : System.Web.UI.Page
     {
-
-        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,12 +18,10 @@ namespace betaalDemo
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
             // PAYNLSDK.API.RequestBase.ApiToken = "Your APITOKEN";
             // PAYNLSDK.API.RequestBase.ServiceId = "Your service ID";
             PAYNLSDK.API.PaymentMethod.GetAll.Response response = PaymentMethod.GetAll();
-
-
+            
             PAYNLSDK.API.Transaction.Start.Request request = Transaction.CreateTransactionRequest("127.0.0.1", "http://example.org/visitor-return-after-payment");
             request.Amount = 666;
 
@@ -77,7 +73,6 @@ namespace betaalDemo
             request.Enduser.BIC = "";
             request.Enduser.SendConfirmMail = true;
 
-
             // enduser address
             request.Enduser.Address = new PAYNLSDK.Objects.Address();
             request.Enduser.Address.StreetName = TxtStraat.Text;
@@ -109,13 +104,44 @@ namespace betaalDemo
 
 
             // Perform transaction to get response object. Alternately, you could work with a stored ID.
-
-
             PAYNLSDK.API.Transaction.Info.Response info = PAYNLSDK.Transaction.Info(responseBak.Transaction.TransactionId);
             PAYNLSDK.Enums.PaymentStatus result = info.PaymentDetails.State;
-
             Debug.WriteLine(responseBak.ToString());
+
+
+
+            
+            //Vulnarable code
+            var code = TxtTussen.Text;//sql inj trigger new update dfgdf desfsd
+            //SprocsManual.Execute(Sprocs.Connection.ConnectionString, $"Select * from Entity where code = '{code}'", CommandType.Text);
+            
+            code = $"<script>alert('{code}');</script>"; //xss
+            Response.Write($"<div>{code}</div>");
+
+            var ms = new MemoryStream();
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(ms, new { i = 2, b = "string", c = 'x' }); // Serialize
+            var obj = bf.Deserialize(ms);//insecure deserialization
+
+            var password = TxtTussen.Text;//sensitive data exposure
+            System.IO.File.WriteAllText(new TempFile().Path, password);
+
+            var id = Request.Form["id"];  //insecure direct object references
+            var sql = $"Select * from Entity where code = '{id}'";
+            //SprocsManual.Execute(Sprocs.Connection.ConnectionString, sql, CommandType.Text);
+            
+            System.Diagnostics.Process.Start("cmd.exe", $"/c TxtTussen.Text");
+
+            // stored xss - embed untrusted data in generated output.
+            TxtTussen.Text = $"<script>window.location='{code}';</script>";
+            
+            // Reflected XSS - embeds untrusted data in generated output with Response.
+            string contentType = Request["contentType"];
+            Response.ContentType = contentType;
+            
+            // Reflected XSS - embeds untrusted data in generated output with Text.
+            TxtTussen.Text = string.Format("Thank you, {0}", Request.Params["PortfolioName"]);
         }
 
-        }
     }
+}
