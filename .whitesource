@@ -1,3 +1,6 @@
 {
-  "settingsInheritedFrom": "DimaMend/whitesource-config@main"
+  "settingsInheritedFrom": "DimaMend/whitesource-config@main",
+  "scanSettingsSAST": {
+    "enableRemediation": true
+  }
 }
